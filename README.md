@@ -2,6 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
+## Contentful
+
+This project uses [Contentful](https://www.contentful.com/) to create blog posts that are then consumed in this application. You will need to create an account and have a content model with the following fields
+
+- `Name: Title, Field ID: title: Type: Short Text`
+- `Name: UrlHandle, Field ID: urlHandle: Type: Short Text`
+- `Name: FeaturedImage, Field ID: featuredImage: Type: Media`
+- `Name: UrlHandle, Field ID: urlHandle: Type: Short Text`
+- `Name: Summary, Field ID: summary: Type: Long Text`
+- `Name: Content, Field ID: content: Type: Rich Text`
+- `Name: Author, Field ID: author: Type: Short Text`
+- `Name: UpdateDate, Field ID: updateDate: Type: Date & Time`
+- `Name: Visible, Field ID: visible: Type: Boolean`
+
+You will also need to copy your API key information from Contentful and add it to the `environment.ts` file environment object as
+
+- `spaceId: 'YOUR-SPACE-ID'`
+- `accessToken: 'YOUR-ACCESS-TOKEN'`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
