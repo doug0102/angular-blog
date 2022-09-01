@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

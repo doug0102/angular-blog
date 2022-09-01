@@ -3,11 +3,17 @@
         {{ blogPosts | json }}
     </pre> -->
 
-    <div class="blog-posts-container" *ngFor="let blogPost of blogPosts.items">
-        <img [src]="blogPost.fields.featuredImage.fields.file.url" alt="">
-        <h2>{{ blogPost.fields.title }}</h2>
-        <p class="author">{{ blogPost.fields.author }}</p>
-        <p class="summary">{{ blogPost.fields.summary }}</p>
-        <a [routerLink]="['blog', blogPost.sys.id]">Read More</a>
+    <div *ngFor="let blogPost of blogPosts.items">
+        <div class="blog-posts-container" *ngIf="blogPost.fields.visible === true">
+            <a [routerLink]="['blog', blogPost.sys.id]">
+                <img [src]="blogPost.fields.featuredImage.fields.file.url" alt="">
+            </a>
+            <h2>{{ blogPost.fields.title }}</h2>
+            <p class="author">{{ blogPost.fields.author }}</p>
+            <p class="summary">{{ blogPost.fields.summary }}</p>
+            <a class="read-more" [routerLink]="['blog', blogPost.sys.id]">Read More</a>
+            <span class="date">{{ blogPost.fields.updatedDate | date: 'MMM d, y' }}</span>
+        </div>
+        
     </div>
 </main>
